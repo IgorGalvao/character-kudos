@@ -16,17 +16,17 @@ ActiveRecord::Schema.define(version: 2020_11_17_212310) do
   enable_extension "plpgsql"
 
   create_table "characters", force: :cascade do |t|
-    t.string "name"
-    t.string "image_url"
-    t.string "slug"
+    t.string "name", null: false
+    t.string "image_url", null: false
+    t.string "slug", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "kudo_types", force: :cascade do |t|
-    t.string "name"
-    t.string "icon"
-    t.string "color"
+    t.string "name", null: false
+    t.string "icon", null: false
+    t.string "color", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
