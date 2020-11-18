@@ -1,6 +1,7 @@
 module Api
   module V1
     class CharactersController < ApplicationController
+      protect_from_forgery with: :null_session
 
       def index
         characters = Character.all
@@ -28,7 +29,7 @@ module Api
         character = Character.find_by(slug: params[:slug])
 
         if character.update(character_params)
-          render json: CharacterSerializer.new(character).serialized_json
+          render json: CharacterSerializer.new(character, options).serialized_json
         else
           render json: { error: character.errors.messages }, status: 400
         end

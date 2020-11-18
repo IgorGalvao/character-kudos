@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :characters, param: slug
+      resources :characters, param: :slug
       resources :kudos, only: [:create, :destroy]
     end
   end
 
-  get '*path', to 'pages#index', via: :all
+  get '*path', to: 'pages#index', via: :all
 end
