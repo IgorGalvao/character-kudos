@@ -16,7 +16,7 @@ const CharacterImage = styled.div`
   }
 `
 const CharacterName = styled.div`
-  padding: 20px 0 10px 0;
+  padding-bottom: 10px;
 `
 
 const LinkWrapper = styled.div`
@@ -27,7 +27,7 @@ const LinkWrapper = styled.div`
     color: #fff;
     background: #000;
     border-radius: 4px;
-    padding: 10px 50px;
+    padding: 10px 30px;
     border: 1px solid #000;
     width: 100%;
     text-decoration: none;
