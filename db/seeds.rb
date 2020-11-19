@@ -97,5 +97,38 @@ kudos = Kudo.create([
     sender_id: 1,
     receiver_id: 3,
     kudo_type_id: 2
+  },
+
+
+  {
+    sender_id: 4,
+    receiver_id: 10,
+    kudo_type_id: 1
+  },
+  {
+    sender_id: 5,
+    receiver_id: 10,
+    kudo_type_id: 2
+  },
+  {
+    sender_id: 6,
+    receiver_id: 10,
+    kudo_type_id: 2
+  },
+  {
+    sender_id: 7,
+    receiver_id: 10,
+    kudo_type_id: 2
+  },
+  {
+    sender_id: 8,
+    receiver_id: 10,
+    kudo_type_id: 3
+  },
+  {
+    sender_id: 9,
+    receiver_id: 10,
+    kudo_type_id: 3
   }
+
 ])
