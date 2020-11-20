@@ -36,7 +36,6 @@ const Characters = () => {
     .catch( resp => console.log(resp) )
   }, [characters.length])
 
-
   const grid = characters.map( item => {
     return (
       <Character
