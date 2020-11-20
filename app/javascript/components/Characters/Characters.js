@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import axios from 'axios'
 import Character from './Character'
+import AvailableKudos from './AvailableKudos'
 import styled from 'styled-components'
 
 const Home = styled.div`
@@ -16,10 +17,6 @@ const Header = styled.div`
   h1 {
     font-size: 42px;
   }
-`
-const KudoBox = styled.div`
-  font-weight: 300;
-  font-size: 26px;
 `
 
 const Grid = styled.div`
@@ -53,7 +50,7 @@ const Characters = () => {
     <Home>
       <Header>
         <h1>Dê um kudo!</h1>
-        <KudoBox>Selos disponíveis</KudoBox>
+        <AvailableKudos/>
       </Header>
       <Grid>
         {grid}

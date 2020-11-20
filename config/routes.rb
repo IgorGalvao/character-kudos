@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :characters, param: :slug
       resources :kudos, only: [:create, :destroy]
+      resources :kudo_types, only: [:index]
+
+      get 'kudo_types/available', to: 'kudo_types#available'
     end
   end
 
