@@ -45,6 +45,21 @@ module Api
         end
       end
 
+      def aggregate_received_kudos
+        received = Character.find_by(slug: params[:slug]).received_kudos
+
+        aggregation = [["Kudo", "Quantidade", "Cor"]]
+        KudoType.all.each do |type|
+          aggregation << [
+            (type.icon + " " + type.name),
+            received.where(kudo_type: type).count,
+            type.color
+          ]
+        end
+
+        render json: aggregation.to_json
+      end
+
       private
 
       def character_params

@@ -50,7 +50,7 @@ const Character = (props) => {
           </Column>
           <Column>
             <PieChart
-              received_kudos={character.included}
+              character_slug={character.data.attributes.slug}
             />
           </Column>
         </Fragment>

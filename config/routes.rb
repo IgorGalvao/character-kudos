@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :kudo_types, only: [:index]
 
       get 'kudo_types/available', to: 'kudo_types#available'
+      get 'characters/:slug/aggregate_received_kudos', to: 'characters#aggregate_received_kudos'
     end
   end
 
