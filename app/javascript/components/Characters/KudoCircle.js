@@ -3,7 +3,10 @@ import styled, { css } from 'styled-components'
 
 const Wrapper = styled.div`
   display: inline-block;
-  margin: 10px;
+  margin: 15px;
+  margin-left: 0;
+  text-align: center;
+  font-size: 26px;
   position: relative;
 `
 

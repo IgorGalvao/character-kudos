@@ -5,6 +5,7 @@ import PieChart from './PieChart'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
+  font-family: Lato;
   margin-left: auto;
   margin-right: auto;
   display: grid;

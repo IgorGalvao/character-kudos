@@ -4,8 +4,16 @@ import axios from 'axios'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  font-weight: 300;
-  font-size: 26px;
+  border: 2px solid #dfdfdf;
+  border-radius: 4px;
+  width: 50%;
+  padding: 15px 25px;
+  
+  h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 900;
+  }
 `
 
 const AvailableKudos = (props) => {

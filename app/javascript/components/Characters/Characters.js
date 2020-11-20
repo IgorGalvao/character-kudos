@@ -5,8 +5,8 @@ import AvailableKudos from './AvailableKudos'
 import styled from 'styled-components'
 
 const Home = styled.div`
-  text-align: center;
-  max-width: 1000px;
+  font-family: Lato;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 `
@@ -15,14 +15,18 @@ const Header = styled.div`
   padding: 100px 100px 10px 100px;
 
   h1 {
-    font-size: 42px;
+    font-size: 48px;
+    font-weight: 900;
+    margin: 0;
+    margin-bottom: 50px;
   }
 `
 
 const Grid = styled.div`
+  text-align: center;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
+  grid-gap: 5px;
   width: 100%;
   padding: 20px;
 `
