@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 
 const Column = styled.div`
   background: #DCDCDC;
-  height: 100vh;
+  height: 95vh;
   overflow: hidden;
 
   &:last-child {
@@ -50,7 +50,7 @@ const Character = (props) => {
           </Column>
           <Column>
             <PieChart
-              attributes={character.data.received_kudos} // TODO: CHECK LATER!!
+              received_kudos={character.included}
             />
           </Column>
         </Fragment>
