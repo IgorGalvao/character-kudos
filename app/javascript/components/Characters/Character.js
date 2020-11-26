@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const Card = styled.div`
   padding: 20px 5px;
@@ -58,6 +59,27 @@ const SendKudoOverlay = styled.div`
   }
 `
 
+const Circle = styled.div`
+  height: 40px;
+  width: 40px;
+  margin: 0 5px;
+  line-height: 38px;
+  display: inline-block;
+  border-radius: 50%;
+  transition: all .2s;
+  ${props =>
+    props.color &&
+    css`
+      background: ${props.color};
+    `};
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+`
+
 const LinkWrapper = styled.div`
   margin: 10px 0;
   height: 20px;
@@ -75,6 +97,24 @@ const LinkWrapper = styled.div`
 `
 
 const Character = (props) => {
+  const [kudoTypes, setKudoTypes] = useState([])
+
+  useEffect( () => {
+    axios.get('/api/v1/kudo_types.json')
+    .then( resp => setKudoTypes(resp.data.data) )
+    .catch( resp => console.log(resp) )
+  }, [kudoTypes.length])
+
+  const kudo_circles = kudoTypes.map( item => {
+    return (
+      <Circle
+        key={item.attributes.name}
+        color={item.attributes.color}>
+        {item.attributes.icon}
+      </Circle>
+    )
+  })
+
   return (
     <Card>
       <CharacterImage>
@@ -82,6 +122,7 @@ const Character = (props) => {
         <SendKudoOverlay>
           <p className="small-text">Dê um kudo para</p>
           <p className="character-name">{props.attributes.name}</p>
+          {kudo_circles}
         </SendKudoOverlay>
       </CharacterImage>
       <LinkWrapper>
